@@ -5,17 +5,20 @@
 * Date:     19/12/2019 
 * Summary:  Déclaration de la classe Encrypt
 */
-
 #ifndef _encrypt_h
 #define _encrypt_h
+
+#include <iostream>
+#include <string>
+#include <fstream>
 
 using namespace std;
 
 class  Encrypt {
     public:
         Encrypt();
-        string get\_plain() const;
-        string get\_cipher() const;
+        string getMessageDechiffre() const;
+        string getMessageCrypte() const;
         bool read(bool isPlain, string filename);
         bool write(bool isPlain, string filename);
         string encode();

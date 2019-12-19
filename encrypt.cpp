@@ -14,13 +14,13 @@ Encrypt::Encrypt()
 
 //////////////////////////////////////////////////////////////GETTER
 //Return le message déchiffré
-string Encrypt::get\_plain() const
+string Encrypt::getMessageDechiffre() const
 {
     return m_MessageDechiffre;
 }
 
 //Return le message chiffré
-string Encrypt::get\_cipher() const
+string Encrypt::getMessageCrypte() const
 {
     return m_MessageCrypte;
 }
@@ -29,46 +29,33 @@ string Encrypt::get\_cipher() const
 bool Encrypt::read(bool isPlain, string filename)
 {
     bool res=false;
+    ifstream monfichier(filename);
 
     //Message non chiffré
     if(isPlain!=true)
-    {        
-        ifstream monficher(filename);
+    {    
         //vérifie que l'ouverture s'esrt bien passée
         if(monfichier) 
         {
             res=true;
              //lecture
             char a;
+            string ligne=0;
 
             //tant qu'on est pas  la ligne, on lit
-            while(getline(monfichier.get(a)))
+            while(getline(monfichier,ligne))
             {
-                cout<<a<<endl;
+                cout<<ligne<<endl;
             }
            
-            
+            cout<<"coucou";
         }
         else
         {
             cout<<"ERREUR: Impossible d'ouvrir le fichier en lecture."<<endl;
         }        
     }
-    else
-    {
-        ifstream monficher(filename);
-        if(monfichier)
-        {
-            //lecture
-            char a;
-            monfichier.getLine(a);
-            
-        }
-        else
-        {
-            cout<<"ERREUR: Impossible d'ouvrir le fichier en lecture."<<endl;
-        }  
-    }
+ 
     
 
     return res;
