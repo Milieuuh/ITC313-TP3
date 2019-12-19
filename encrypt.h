@@ -22,7 +22,7 @@ class  Encrypt {
         string decode();
 
     protected:
-        string m\_plain;
-        string m\_cipher;
+        string m_MessageDechiffre;
+        string m_MessageCrypte;
 };
 #endif // _encrypt_h
