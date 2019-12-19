@@ -34,19 +34,42 @@ bool Encrypt::read(bool isPlain, string filename)
     if(isPlain!=true)
     {        
         ifstream monficher(filename);
-        if(monfichier)
+        //vérifie que l'ouverture s'esrt bien passée
+        if(monfichier) 
         {
-            string ligne;
-            getLigne
-            //lecture
             res=true;
+             //lecture
+            char a;
+
+            //tant qu'on est pas  la ligne, on lit
+            while(getline(monfichier.get(a)))
+            {
+                cout<<a<<endl;
+            }
+           
+            
         }
         else
         {
             cout<<"ERREUR: Impossible d'ouvrir le fichier en lecture."<<endl;
-        }
-        
+        }        
     }
+    else
+    {
+        ifstream monficher(filename);
+        if(monfichier)
+        {
+            //lecture
+            char a;
+            monfichier.getLine(a);
+            
+        }
+        else
+        {
+            cout<<"ERREUR: Impossible d'ouvrir le fichier en lecture."<<endl;
+        }  
+    }
+    
 
     return res;
 
@@ -57,11 +80,12 @@ bool Encrypt::write(bool isPlain, string filename)
 
 }
 
-////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////// Méthodes implémentées par les classes filles
 string Encrypt::encode()
 {
 
 }
+
 string Encrypt::decode()
 {
 
