@@ -14,7 +14,7 @@ Caesar::Caesar()
 
 std::string Caesar::encode()
 {
-
+    this->read(true, "coucou"); 
 }
 
 std::string Caesar::decode()
