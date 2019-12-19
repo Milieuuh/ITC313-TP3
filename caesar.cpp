@@ -11,3 +11,13 @@ Caesar::Caesar()
 {
 
 }
+
+std::string Caesar::encode()
+{
+
+}
+
+std::string Caesar::decode()
+{
+
+}

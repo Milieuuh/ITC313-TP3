@@ -17,7 +17,10 @@ class Caesar: public Encrypt {
     public: 
         Caesar(); 
         std::string encode(); 
-        std::string decode(); 
+        std::string decode();
+
+    private:
+        int cle = 3; //décalage vers la droite 
 
 };
 
