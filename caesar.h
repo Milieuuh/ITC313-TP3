@@ -21,6 +21,7 @@ class Caesar: public Encrypt {
 
     private:
         int cle = 3; //décalage vers la droite 
+        string nomFichier="C:/Users/lucie/Documents/GitHub/ITC313-TP3/fichiers_test/test.txt";
 
 };
 

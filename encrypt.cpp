@@ -34,25 +34,32 @@ bool Encrypt::read(bool estChiffre, string filename)
     
     //vérifie que l'ouverture s'esrt bien passée
     if(monfichier) 
-    {          
+    {       
+        //lecture
+        string ligne;   
         //Message non chiffré
         if(estChiffre==false)
         {  
-             cout<<"MESSAGE : "<<endl;
+            cout<<"MESSAGE : "<<endl;
+            //tant qu'on est pas  la ligne, on lit
+            while(getline(monfichier,ligne))
+            {
+                cout<<ligne<<endl;
+                m_MessageDechiffre+=ligne;
+            }
+             
         } 
         else
         {
             cout<<"MESSAGE CHIFFRE : "<<endl;
+             //tant qu'on est pas  la ligne, on lit
+            while(getline(monfichier,ligne))
+            {
+                cout<<ligne<<endl;
+                m_MessageCrypte+=ligne;
+            }
         }
-        
-        //lecture
-        string ligne;
-
-        //tant qu'on est pas  la ligne, on lit
-        while(getline(monfichier,ligne))
-        {
-            cout<<ligne<<endl;
-        }
+           
         
         res=true;
     }
@@ -75,7 +82,7 @@ bool Encrypt::write(bool estChiffre, string filename)
     {
         res=true;
          //test pour testerà enlever après
-            m_MessageDechiffre="coucou";
+         //   m_MessageDechiffre="coucou";
         if(estChiffre==false)
         {
            

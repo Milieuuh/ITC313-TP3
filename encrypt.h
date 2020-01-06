@@ -27,5 +27,6 @@ class  Encrypt {
     protected:
         string m_MessageDechiffre;
         string m_MessageCrypte;
+        
 };
 #endif // _encrypt_h
