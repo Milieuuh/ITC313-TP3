@@ -26,52 +26,84 @@ string Encrypt::getMessageCrypte() const
 }
 
 /////////////////////////////////////////////////////////////Lecture et écriture
-bool Encrypt::read(bool isPlain, string filename)
+bool Encrypt::read(bool estChiffre, string filename)
 {
     bool res=false;
     ifstream monfichier(filename);
 
-    //Message non chiffré
-    if(isPlain!=true)
-    {    
-        //vérifie que l'ouverture s'esrt bien passée
-        if(monfichier) 
-        {           
-             //lecture
-            string ligne;
-
-            //tant qu'on est pas  la ligne, on lit
-            while(getline(monfichier,ligne))
-            {
-                cout<<ligne<<endl;
-            }
-           
-            res=true;
-        }
+    
+    //vérifie que l'ouverture s'esrt bien passée
+    if(monfichier) 
+    {          
+        //Message non chiffré
+        if(estChiffre==false)
+        {  
+             cout<<"MESSAGE : "<<endl;
+        } 
         else
         {
-            cout<<"ERREUR: Impossible d'ouvrir le fichier en lecture."<<endl;
-        }        
+            cout<<"MESSAGE CHIFFRE : "<<endl;
+        }
+        
+        //lecture
+        string ligne;
+
+        //tant qu'on est pas  la ligne, on lit
+        while(getline(monfichier,ligne))
+        {
+            cout<<ligne<<endl;
+        }
+        
+        res=true;
     }
- 
-    
+    else
+    {
+        cout<<"ERREUR: Impossible d'ouvrir le fichier en lecture."<<endl;
+    }    
 
     return res;
 
 }
 
-bool Encrypt::write(bool isPlain, string filename)
+bool Encrypt::write(bool estChiffre, string filename)
 {
+    bool res=false;
+    ofstream monFichier(filename);
 
+
+    if(monFichier)
+    {
+        res=true;
+         //test pour testerà enlever après
+            m_MessageDechiffre="coucou";
+        if(estChiffre==false)
+        {
+           
+            monFichier<<m_MessageDechiffre<<endl;
+        }
+        else
+        {
+            monFichier<<m_MessageCrypte<<endl;
+        }
+
+    }
+    else
+    {
+        cout<<"ERREUR: Impossible d'ouvrir le fichier."<<endl;
+    }  
+
+    return res;
 }
 
 //////////////////////////////////////////////////////////// Méthodes implémentées par les classes filles
 string Encrypt::encode()
 {
-
+    m_MessageCrypte=m_MessageDechiffre;
+    return m_MessageCrypte;
 }
 
 string Encrypt::decode()
 {
-
+    m_MessageDechiffre=m_MessageCrypte;
+    return m_MessageDechiffre;
 }
