@@ -36,11 +36,9 @@ bool Encrypt::read(bool isPlain, string filename)
     {    
         //vérifie que l'ouverture s'esrt bien passée
         if(monfichier) 
-        {
-            res=true;
+        {           
              //lecture
-            char a;
-            string ligne=0;
+            string ligne;
 
             //tant qu'on est pas  la ligne, on lit
             while(getline(monfichier,ligne))
@@ -48,7 +46,7 @@ bool Encrypt::read(bool isPlain, string filename)
                 cout<<ligne<<endl;
             }
            
-            cout<<"coucou";
+            res=true;
         }
         else
         {
