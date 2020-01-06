@@ -38,6 +38,8 @@ std::string Caesar2::encode()
     
     //écrire dans 
     this->write(true,nomFichier);
+
+    return m_MessageCrypte;
 }
 
 std::string Caesar2::decode()
@@ -67,4 +69,6 @@ std::string Caesar2::decode()
     
     //écrire dans 
     this->write(false,nomFichier);
+
+    return m_MessageDechiffre;
 }

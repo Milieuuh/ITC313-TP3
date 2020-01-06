@@ -1,6 +1,7 @@
 #include "encrypt.h"
 #include "caesar.h"
 #include "caesar2.h"
+#include "vigenere.h"
 
 int main()
 {
@@ -17,11 +18,14 @@ int main()
     c.encode();
     c.decode();*/
 
-    Caesar2 c2(3);
+   /* Caesar2 c2(3);
     cout<<"ENCODE"<<endl;
     c2.encode();
     cout<<" \nDECODE"<<endl;
-    c2.decode();
+    c2.decode();*/
+
+    Vigenere v ; 
+    v.encode(); 
 
     return 0;
 }
