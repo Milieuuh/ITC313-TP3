@@ -1,21 +1,22 @@
 /**
-* File:    caesar.h 
-* Author:  GENTON Emilie
-* Date:     19/12/2019 
-* Summary:  déclaration de la classe Caesar
+* File:    caesar2.h
+* Author:  GENTON Emilie BOUCQUEMONT Lucie
+* Date:     06/01/2020
+* Summary:  Implémentation de la classe Caesar2
 */
 
-#ifndef _caesar_h
-#define _caesar_h
+#ifndef _caesar2_h
+#define _caesar2_h
 
 #include <string>
 #include "encrypt.h"
+#include <iostream>
 
 using namespace std;
-class Caesar: public Encrypt {
+class Caesar2: public Encrypt {
 
     public: 
-        Caesar(int lacle); 
+        Caesar2(int lacle); 
         std::string encode(); 
         std::string decode();
 
@@ -25,4 +26,4 @@ class Caesar: public Encrypt {
 
 };
 
-#endif // _caesar_h
+#endif // _caesar2_h

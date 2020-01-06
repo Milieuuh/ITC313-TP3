@@ -1,6 +1,6 @@
 #include "encrypt.h"
 #include "caesar.h"
-
+#include "caesar2.h"
 
 int main()
 {
@@ -13,9 +13,15 @@ int main()
 
     e.read(true,s);*/
 
-    Caesar c;
-    //c.encode();
-    c.decode();
+  /*  Caesar c(3);
+    c.encode();
+    c.decode();*/
+
+    Caesar2 c2(3);
+    cout<<"ENCODE"<<endl;
+    c2.encode();
+    cout<<" \nDECODE"<<endl;
+    c2.decode();
 
     return 0;
 }

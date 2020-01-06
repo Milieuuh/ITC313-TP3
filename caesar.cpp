@@ -7,9 +7,9 @@
 
 #include "caesar.h"
 
-Caesar::Caesar()
+Caesar::Caesar(int lacle)
 {
-
+    cle=lacle;
 }
 
 std::string Caesar::encode()

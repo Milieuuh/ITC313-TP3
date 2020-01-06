@@ -40,7 +40,6 @@ bool Encrypt::read(bool estChiffre, string filename)
         //Message non chiffré
         if(estChiffre==false)
         {  
-            cout<<"MESSAGE : "<<endl;
             //tant qu'on est pas  la ligne, on lit
             while(getline(monfichier,ligne))
             {
@@ -50,8 +49,7 @@ bool Encrypt::read(bool estChiffre, string filename)
              
         } 
         else
-        {
-            cout<<"MESSAGE CHIFFRE : "<<endl;
+        {            
              //tant qu'on est pas  la ligne, on lit
             while(getline(monfichier,ligne))
             {
@@ -82,7 +80,7 @@ bool Encrypt::write(bool estChiffre, string filename)
     {
         res=true;
          //test pour testerà enlever après
-         //   m_MessageDechiffre="coucou";
+       
         if(estChiffre==false)
         {
            
